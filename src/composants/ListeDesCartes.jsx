@@ -12,7 +12,7 @@ export default function ListeDesCartes(props) {
     />
   ));
   return (
-    <div class='ui link cards'>
+    <div className='ui link cards'>
       {listeDeCartes}
       {/* <Card
         photo={props.profiles[0].photo}
