@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import ListeDesCartes from './ListeDesCartes';
-import SearchForm from './SearchForm';
-import axios from 'axios';
+import ListeDesCartes from './liste-des-cartes/';
+import SearchForm from './search-form/';
+import listeContact from '../api/listeContact';
 
 function App() {
   const [profiles, setProfiles] = useState([]);
   const [profileFiltre, setProfileFiltre] = useState([]);
 
   useEffect(() => {
-    axios.get('https://5mbp3.sse.codesandbox.io/api/profiles').then((res) => {
+    listeContact.get('/profiles').then((res) => {
       setProfiles(res.data);
       setProfileFiltre(res.data);
     });
