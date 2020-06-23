@@ -8,7 +8,6 @@ function App() {
   const [profileFiltre, setProfileFiltre] = useState([]);
 
   useEffect(() => {
-    console.log('USE EFFECT');
     axios.get('https://5mbp3.sse.codesandbox.io/api/profiles').then((res) => {
       setProfiles(res.data);
       setProfileFiltre(res.data);
