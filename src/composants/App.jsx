@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import ListeDesCartes from './liste-des-cartes/';
 import SearchForm from './search-form/';
 import listeContact from '../api/listeContact';
+import { Provider } from 'react-redux';
+import store from '../redux/store';
 
 function App() {
   const [profiles, setProfiles] = useState([]);
@@ -28,10 +30,10 @@ function App() {
     setProfileFiltre(listeFiltree);
   };
   return (
-    <>
+    <Provider store={store}>
       <SearchForm mettreAjourProfiles={mettreAjourProfiles} />
       <ListeDesCartes profiles={profileFiltre} />
-    </>
+    </Provider>
   );
 }
 
